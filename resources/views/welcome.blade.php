@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 64px;
             }
 
             .links > a {
@@ -79,8 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Welcome, {{$name}}
                 </div>
+                <ul>
+                    <span>The following roles have been assign to you:</span>
+
+                    @foreach($roles as $role)
+                        <li>{{$role->getName()}}</li>
+                    @endforeach
+                </ul>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>

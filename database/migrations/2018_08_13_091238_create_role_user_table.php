@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserRoleTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateUserRoleTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_role', function (Blueprint $table) {
-            $table->integer('user_id', false, true);
-            $table->integer('role_id', false, true);
+        Schema::create('role_user', function (Blueprint $table) {
+            $table->integer('user_id', false, true)->index();
+            $table->integer('role_id', false, true)->index();
 
             $table->unique(['user_id', 'role_id']);
 
